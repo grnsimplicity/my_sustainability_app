@@ -1,0 +1,16 @@
+<h1>Issues#show</h1>
+<p>Find me in app/views/issues/show.html.erb</p>
+
+
+<tr>
+    <th>Issue</th>
+    <th>Image</th>
+  </tr>
+  <% @issues do |issue| %>
+    <tr>
+      <td><%= issue.topic %></td>
+      <td><%= issue.image_url %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

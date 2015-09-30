@@ -1,0 +1,8 @@
+<h1>This is my sustainability app of resources</h1>
+<p><%=link_to "Test", root_path, class: 'btn btn-lg btn-warning' %> </p>
+
+<% @issues.each do |issue| %>
+<tr>
+  <td class="col-md-2"> <%= issue_image(issue.issue_image,class: 'img-thumbnail img-reponsive') %> </td>
+  <td> <%= issues.topic %> </td>
+</tr>
