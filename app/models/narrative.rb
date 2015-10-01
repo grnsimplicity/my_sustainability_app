@@ -1,3 +1,3 @@
 class Narrative < ActiveRecord::Base
-  belongs_to :issue
+  has_many :issue
 end
