@@ -1,0 +1,13 @@
+<div class="panel-body">
+  <%= simple_form_for @issue do |f| %>
+    <%= f.input :win, label: false, input_html: {placeholder: "Title"}%>
+    <%= f.input :description, label: false, as: :text, input_html: {placeholder: "Description"} %>
+  <%= f.input :result, label: false, as: :text, input_html: {placeholder: "Result"} %>
+    <%= f.input :people, label: false, as: :integer, input_html: {placeholder: "Artist Bio"} %>
+  <%= f.input :location, label: false, as: :intger, input_html: {placeholder: "Artist Bio"} %>
+  <%= f.input :templates, label: false, as: :string, input_html: {placeholder: "Artist Bio"} %>
+    <%= f.input :image, label: false, input_html: {placeholder: "Image"} %>
+    <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-danger"%>
+  <% end %>
+  </div>
+</div>
