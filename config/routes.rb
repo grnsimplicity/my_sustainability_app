@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'issues/index'
   #
   # get 'issues/show'
@@ -11,9 +12,8 @@ Rails.application.routes.draw do
   #
   # get 'static_pages#home'
 
-  resources :issues do
-    resources :narratives
-  end
+  resources :issues
+  resources :narratives
 
 root 'issues#index'
 

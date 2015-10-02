@@ -17,5 +17,6 @@
 //= require classie.js
 //= require cbpAnimatedHeader
 //= require cbpAnimatedHeader.min.js
+//= require contact_me.js
 //= require turbolinks
 //= require_tree .
