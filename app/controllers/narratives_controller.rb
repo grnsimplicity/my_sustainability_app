@@ -1,10 +1,10 @@
 class NarrativesController < ApplicationController
   def index
-    @narratives = Narratives.all
+    @narratives = Narrative.all
   end
 
   def show
-    @narrative = get_story_associated_with_issue
+    @narrative = get_narrative
   end
 
   def new
@@ -45,4 +45,9 @@ private
      "There's currently no stories."
    end
  end
+
+ def get_narrative
+   Narrative.find(params[:id])
+ end
+
 end
