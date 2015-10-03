@@ -1,2 +1,24 @@
 <h1>Narratives#index</h1>
 <p>Find me in app/views/narratives/index.html.erb</p>
+
+<div class="row-fluid">
+  <div class="panel panel-default">
+  <div class="col-md-6">
+    <%=image_tag(@narratives.image_url, class: "img-responsive thumbnail") %>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1> <%= @narratives.title%>
+          <%=link_to "All Narratives", narratives_path, class: 'btn btn-default btn-xs'%>
+        </h1>
+      </div>
+      <div class="panel-body">
+        <p> <%= @narratives.description %> </p>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
