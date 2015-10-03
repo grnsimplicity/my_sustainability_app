@@ -40,7 +40,7 @@ private
     @issue = Issue.find(params[:topic])
     @narrative = Narrative.find(params[:topic])
     if @issue=@narrative
-     redirect_to narrative_path(@narrative)
+     redirect_to narrative_path(@issue, @narrative)
    else
      "There's currently no stories."
    end
