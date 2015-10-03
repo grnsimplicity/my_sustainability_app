@@ -4,8 +4,7 @@ class NarrativesController < ApplicationController
   end
 
   def show
-    @issue = Issue.find(params[:issue_id])
-    @narrative = Narrative.all
+    @narrative = get_story_associated_with_issue
   end
 
   def new
@@ -37,4 +36,13 @@ private
     params.require(:narrative).permit(:title, :description, :text, :result, :people, :location, :templates, :image_url)
   end
 
+  def get_story_associated_with_issue
+    @issue = Issue.find(params[:topic])
+    @narrative = Narrative.find(params[:topic])
+    if @issue=@narrative
+     redirect_to narrative_path(@narrative)
+   else
+     "There's currently no stories."
+   end
+ end
 end

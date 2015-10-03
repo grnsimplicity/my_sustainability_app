@@ -20,8 +20,9 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.4.0'
-# 
-
+#
+gem 'less-rails', '~> 2.7.0'
+gem 'therubyracer'
 #Other:
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
