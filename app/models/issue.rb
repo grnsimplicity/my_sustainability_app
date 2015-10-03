@@ -6,6 +6,7 @@
 #  topic      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  image_url  :string
 #
 
 class Issue < ActiveRecord::Base
