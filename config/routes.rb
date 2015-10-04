@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :narratives, only: [:new, :create, :edit, :update, :destroy]
 
-root 'issues#index'
+root 'static_pages#home'
+
+# root 'issues#index'
   # get 'issues/index'
   #
   # get 'issues/show'

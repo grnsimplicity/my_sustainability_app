@@ -1,5 +1,7 @@
 class NarrativesController < ApplicationController
 
+  before_action :authenticate_user!
+  
 # under issue
   def index
     @issue = Issue.find(params[:issue_id])
