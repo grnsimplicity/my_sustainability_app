@@ -1,7 +1,7 @@
 class NarrativesController < ApplicationController
 
   before_action :authenticate_user!
-  
+
 # under issue
   def index
     @issue = Issue.find(params[:issue_id])
@@ -32,6 +32,13 @@ class NarrativesController < ApplicationController
     @issue = Issue.find(params[:topic])
     @narrative = @issue.narrative.update(narrative_params)
   end
+
+  def destroy
+    @issue = Issue.find(params[:issue_id])
+    @narrative = @issue.narrative.destroy
+    redirect_to issue_narrative_path
+  end
+
 
 private
 
