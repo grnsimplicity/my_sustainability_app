@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :issues
-  resources :narratives
+  resources :issues do
+    resources :narratives
+  end
+
 root 'issues#index'
   # get 'issues/index'
   #

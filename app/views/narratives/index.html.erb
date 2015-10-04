@@ -1,24 +1,24 @@
 <h1>Narratives#index</h1>
 <p>Find me in app/views/narratives/index.html.erb</p>
 
-<div class="row-fluid">
-  <div class="panel panel-default">
-  <div class="col-md-6">
-    <%=image_tag(@narrative.image_url, class: "img-responsive thumbnail") %>
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h1> <%= @narrative.title%>
-          <%=link_to "All Narratives", narratives_path, class: 'btn btn-default btn-xs'%>
-        </h1>
-      </div>
-      <div class="panel-body">
-        <p> <%= @narrative.description %> </p>
-      </div>
+<% @narratives.each do |narrative| %>
+<div class="row">
+      <div class="col-md-4 col-sm-6 portfolio-item">
+              <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                      <i class="fa fa-plus fa-3x"></i>
+                      <%= image_tag(narrative.image_url, :class => "img-responsive") %>
+                  </div>
+              </div>
+          <div class="portfolio-caption">
+
+            <tr>
+              <td class="col-md-2"> </td>
+              <h4>  <%= narrative.title %> </h4>
+              <h4>  <%= narrative.description %> </h4>
+              <h4>  <%= narrative.result %> </h4>
+          </div>
+    </tr>
     </div>
-
-
-
-  </div>
 </div>
+<% end %>

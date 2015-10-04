@@ -2,14 +2,11 @@
 <p>Find me in app/views/issues/show.html.erb</p>
 
 
-<tr>
-    <th>Issue</th>
-    <th>Image</th>
-  </tr>
-  <% @issues do |issue| %>
+
+  <% @issue.narratives do |narrative| %>
     <tr>
-      <td><%= issue.topic %></td>
-      <td><%= issue.image_url %></td>
+      <td><%= narrative.title %></td>
+      <td><%= narrative.description %></td>
     </tr>
     <% end %>
   </table>

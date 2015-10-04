@@ -1,6 +1,7 @@
 class NarrativesController < ApplicationController
   def index
-    @narratives = Narrative.all
+    @issue = Issue.find(params[:issue_id])
+    @narratives = @issue.narratives
   end
 
   def show
@@ -21,13 +22,8 @@ class NarrativesController < ApplicationController
   end
 
   def update
-    @issue = Issue.find(params[:issue_id])
+    @issue = Issue.find(params[:topic])
     @narrative = @issue.narrative.update(narrative_params)
-      if @narrative.save
-        redirect_to issue_narrative_path(@issue, @narrative)
-      else
-        render 'edit'
-      end
   end
 
 private
@@ -37,19 +33,8 @@ private
   end
 
   def get_story_associated_with_issue
-    @issue = Issue.find(params[:topic])
-    @narrative = Narrative.find(params[:topic])
-    if @issue=@narrative
-     redirect_to narrative_path(@issue, @narrative)
-   else
-     "There's currently no stories."
-   end
+    @issue = Issue.find(params[:issue_id])
+    @stories = @issue.narratives
  end
-
- def get_narrative
-   @issues = Issue.find(params[:topic])
-   @narratives = Narrative.find(params[:topic])
- end
-
 
 end
