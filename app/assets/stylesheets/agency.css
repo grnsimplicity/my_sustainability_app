@@ -266,7 +266,9 @@ header {
     color: #fff;
     background-attachment: scroll;
     /*background-image: url(../img/header-bg.jpg);*/
-    background: url("http://www.wmeentertainment.com/colbie_caillat/imgs/colbie_caillat_2.jpg") no-repeat bottom center scroll;
+    /*background: url("http://www.wmeentertainment.com/colbie_caillat/imgs/colbie_caillat_2.jpg") no-repeat bottom center scroll;*/
+    /*background-image: url('../img/background.jpg');*/
+    background-image: <%= image_tag "images/background.jpg", size: "50 x20" %>;
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -868,7 +870,10 @@ body {
 }
 
 header {
-	background-image: url('../img/header-bg.jpg');
+  /*background: url("http://www.wmeentertainment.com/colbie_caillat/imgs/colbie_caillat_2.jpg") no-repeat bottom center scroll;*/
+  /*background-image: url('../img/header-bg.jpg');*/
+  /*background-image: url('../img/background.jpg');*/
+    background-image: <%= image_tag "images/background.jpg", size: "50 x20" %>;
 	background-repeat: none;
 	background-attachment: scroll;
 	background-position: center center;
