@@ -1,13 +1,18 @@
 class NarrativesController < ApplicationController
+
+# under issue
   def index
     @issue = Issue.find(params[:issue_id])
     @narratives = @issue.narratives
+
   end
 
   def show
-    @narrative = get_story_associated_with_issue
+      @issue = Issue.find(params[:issue_id])
+      @narrative = Narrative.find(params[:id])
   end
 
+# not under issue
   def new
     @narrative = Narrative.new
   end
@@ -32,9 +37,6 @@ private
     params.require(:narrative).permit(:title, :description, :text, :result, :people, :location, :templates, :image_url, :topic)
   end
 
-  def get_story_associated_with_issue
-    @issue = Issue.find(params[:issue_id])
-    @stories = @issue.narratives
- end
+
 
 end

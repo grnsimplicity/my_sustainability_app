@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :issues do
-    resources :narratives
+    resources :narratives, only: [:index, :show]
   end
+
+  resources :narratives, only: [:new, :create, :edit, :update, :destroy]
 
 root 'issues#index'
   # get 'issues/index'
