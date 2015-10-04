@@ -267,8 +267,9 @@ header {
     background-attachment: scroll;
     /*background-image: url(../img/header-bg.jpg);*/
     /*background: url("http://www.wmeentertainment.com/colbie_caillat/imgs/colbie_caillat_2.jpg") no-repeat bottom center scroll;*/
-    /*background-image: url('../img/background.jpg');*/
-    background-image: <%= image_tag "images/background.jpg", size: "50 x20" %>;
+    background-image: url('background.jpg');
+    /*background-image: <%= image_tag "images/background.jpg", size: "50 x20" %>;*/
+    /*background-image <img src="images/background.jpg" class="img-responsive img-circle" alt="">*/
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -873,8 +874,10 @@ header {
   /*background: url("http://www.wmeentertainment.com/colbie_caillat/imgs/colbie_caillat_2.jpg") no-repeat bottom center scroll;*/
   /*background-image: url('../img/header-bg.jpg');*/
   /*background-image: url('../img/background.jpg');*/
-    background-image: <%= image_tag "images/background.jpg", size: "50 x20" %>;
-	background-repeat: none;
+    /*background-image: <%= image_tag "images/background.jpg", size: "50 x20" %>;*/
+  /*background-image <img src="images/background.jpg" class="img-responsive img-circle" alt="">*/
+  background-image: url('background.jpg');
+  background-repeat: none;
 	background-attachment: scroll;
 	background-position: center center;
 	.background-cover;
