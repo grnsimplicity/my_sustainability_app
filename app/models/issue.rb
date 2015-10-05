@@ -12,4 +12,5 @@
 class Issue < ActiveRecord::Base
   has_many :narratives
   has_many :users, :through => :narratives
+  accepts_nested_attributes_for :narratives
 end

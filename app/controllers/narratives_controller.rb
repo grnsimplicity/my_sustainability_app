@@ -6,7 +6,6 @@ class NarrativesController < ApplicationController
   def index
     @issue = Issue.find(params[:issue_id])
     @narratives = @issue.narratives
-
   end
 
   def show
@@ -22,7 +21,8 @@ class NarrativesController < ApplicationController
   def create
     @narrative = Narrative.create(narrative_params)
     if @narrative.save
-      redirect_to @narrative
+
+      redirect_to issue_narratives_path(:id)
     else
       render 'new'
     end
@@ -43,7 +43,7 @@ class NarrativesController < ApplicationController
 private
 
   def narrative_params
-    params.require(:narrative).permit(:title, :description, :text, :result, :people, :location, :templates, :image_url, :topic)
+    params.require(:narrative).permit(:title, :description, :text, :result, :people, :location, :templates, :image_url, issue_attributes: [:id, :topic])
   end
 
 

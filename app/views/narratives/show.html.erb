@@ -5,17 +5,18 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h1> <%= @narrative.title%>
+<% narrative.each do |narrative| %>
+        <h1> <%= narrative.title%>
         </h1>
       </div>
       <div class="panel-body">
-        <h4>  <%= @narrative.description %> </h4>
-        <h4>  <%= @narrative.result %> </h4>
-        <h4>  <%= @narrative.description %> </h4>
-        <h4>  <%= @narrative.result %> </h4>
-        <h4>  <%= @narrative.people %> </h4>
-        <h4>  <%= @narrative.location %> </h4>
-        <h4>  <%= @narrative.templates %> </h4>
+        <h4>  <%= narrative.description %> </h4>
+        <h4>  <%= narrative.result %> </h4>
+        <h4>  <%= narrative.description %> </h4>
+        <h4>  <%= narrative.result %> </h4>
+        <h4>  <%= narrative.people %> </h4>
+        <h4>  <%= narrative.location %> </h4>
+        <h4>  <%= narrative.templates %> </h4>
       </div>
       <%= link_to 'Delete', @narrative, method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: 'btn btn-xs btn-danger' %>
       <%=link_to "Go Back To  Narratives", issue_narratives_path(@issue), class: 'btn btn-default btn-xs'%>
@@ -25,3 +26,4 @@
 
   </div>
 </div>
+<% end %>

@@ -1,7 +1,7 @@
 <h1>Narratives#index</h1>
 <p>Find me in app/views/narratives/index.html.erb</p>
 
-<% @narratives.each do |narrative| %>
+<% @issue.narratives.each do |narrative| %>
 <div class="row">
       <div class="col-md-4 col-sm-6 portfolio-item">
               <div class="portfolio-hover">
@@ -11,13 +11,13 @@
                   </div>
               </div>
           <div class="portfolio-caption">
-
             <tr>
               <td class="col-md-2"> </td>
               <h4>  <%= link_to narrative.title %> </h4>
-          <%=link_to "Go Back To Issue Topic", issues_path, class: 'btn btn-default btn-xs'%>
-          </div>
     </tr>
     </div>
 </div>
+</div>
 <% end %>
+
+<%=link_to "Go Back To Issue Topic", issues_path, class: 'btn btn-default btn-xs'%>

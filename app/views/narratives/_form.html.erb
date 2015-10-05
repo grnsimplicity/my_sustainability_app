@@ -1,11 +1,11 @@
 <div class="panel-body">
-  <%= simple_form_for @narrative do |f| %>
+  <%= simple_form_for (@narrative) do |f| %>
     <%= f.input :title, label: false, input_html: {placeholder: "Title"}%>
-    <%= f.association :issue, :include_blank => false, :label_method => lambda { |issue| "#{issue.topic}" } %>
+    <%= f.association :issue, label_method: :issue_topic, value_method: :id, :include_blank => false, :label_method => lambda { |issue| "#{issue.topic}" } %>
     <%= f.input :description, label: false, as: :text, input_html: {placeholder: "Description"} %>
   <%= f.input :result, label: false, as: :text, input_html: {placeholder: "Result"} %>
-    <%= f.input :people, label: false, as: :integer, input_html: {placeholder: "People"} %>
-  <%= f.input :location, label: false, as: :integer, input_html: {placeholder: "Location"} %>
+    <%= f.input :people, label: false, as: :integer, input_html: {placeholder: "Number of People Impacted"} %>
+  <%= f.input :location, hint: "Zip Code", label: false, as: :integer, input_html: {placeholder: "Location"} %>
   <%= f.input :templates, label: false, as: :string, input_html: {placeholder: "Templates"} %>
     <%= f.input :image_url, label: false, input_html: {placeholder: "Image"} %>
     <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-danger"%>
