@@ -34,9 +34,12 @@ class NarrativesController < ApplicationController
   end
 
   def destroy
-    @issue = Issue.find(params[:issue_id])
-    @narrative = @issue.narrative.destroy
-    redirect_to issue_narrative_path
+    @narrative = Narrative.find(params[:id])
+    if @narrative.destroy
+      redirect_to issue_narratives_path
+    else
+      "This story no longer exists"
+    end  
   end
 
 
