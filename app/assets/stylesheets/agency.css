@@ -265,11 +265,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    /*background-image: url(../img/header-bg.jpg);*/
-    /*background: url("http://www.wmeentertainment.com/colbie_caillat/imgs/colbie_caillat_2.jpg") no-repeat bottom center scroll;*/
     background-image: url('background.jpg');
-    /*background-image: <%= image_tag "images/background.jpg", size: "50 x20" %>;*/
-    /*background-image <img src="images/background.jpg" class="img-responsive img-circle" alt="">*/
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -868,54 +864,4 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #fed136;
-}
-
-header {
-  background-image: url('background.jpg');
-  background-repeat: none;
-	background-attachment: scroll;
-	background-position: center center;
-	text-align: center;
-	color: white;
-	.intro-text {
-		padding-top: 100px;
-		padding-bottom: 50px;
-		.intro-lead-in {
-			.serif-font;
-			font-style: italic;
-			font-size: 22px;
-			line-height: 22px;
-			margin-bottom: 25px;
-		}
-		.intro-heading {
-			.heading-font;
-			font-weight: 700;
-			font-size: 50px;
-			line-height: 50px;
-			margin-bottom: 25px;
-		}
-	}
-}
-
-@media(min-width:768px) {
-	header {
-		.intro-text {
-			padding-top: 300px;
-			padding-bottom: 200px;
-			.intro-lead-in {
-				.serif-font;
-				font-style: italic;
-				font-size: 40px;
-				line-height: 40px;
-				margin-bottom: 25px;
-			}
-			.intro-heading {
-				.heading-font;
-				font-weight: 700;
-				font-size: 75px;
-				line-height: 75px;
-				margin-bottom: 50px;
-			}
-		}
-	}
 }
