@@ -880,7 +880,7 @@ header {
   background-repeat: none;
 	background-attachment: scroll;
 	background-position: center center;
-	.background-cover;
+	/*.background-cover;*/
 	text-align: center;
 	color: white;
 	.intro-text {
