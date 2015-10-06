@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 #Front End Tools
 # Use SCSS for stylesheets
@@ -35,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #add user authentication
 gem 'devise'
 
+#add heroku gem
+# gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,4 +53,10 @@ group :development, :test do
   gem 'better_errors'
   gem 'annotate'
   gem 'spring'
+  gem 'sqlite3'
 end
+
+group :production do
+  gem 'rails_12factor'
+    gem 'pg'
+  end
