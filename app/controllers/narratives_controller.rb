@@ -22,7 +22,7 @@ class NarrativesController < ApplicationController
     @narrative = Narrative.create(narrative_params)
     if @narrative.save
 
-      redirect_to issue_narratives_path(:id)
+      redirect_to issue_narratives_path(@narrative.issue)
     else
       render 'new'
     end
@@ -36,17 +36,17 @@ class NarrativesController < ApplicationController
   def destroy
     @narrative = Narrative.find(params[:id])
     if @narrative.destroy
-      redirect_to issue_narratives_path
+      redirect_to issue_narratives_path(@narrative.issue)
     else
       "This story no longer exists"
-    end  
+    end
   end
 
 
 private
 
   def narrative_params
-    params.require(:narrative).permit(:title, :description, :text, :result, :people, :location, :templates, :image_url, issue_attributes: [:id, :topic])
+    params.require(:narrative).permit(:title, :description, :text, :result, :people, :location, :templates, :image_url, :issue_id)
   end
 
 
